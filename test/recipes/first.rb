@@ -12,6 +12,6 @@ file 'c:\FGL\myfile.txt' do
 end
 
 # Activation d'une feature
-windows_feature "TelnetClient" do
+windowsfeature "TelnetClient" do
   action :install
 end
