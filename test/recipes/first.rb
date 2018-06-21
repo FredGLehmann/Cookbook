@@ -7,7 +7,7 @@ end
 
 # creation d'un fichier text avec contenu
 file 'c:\FGL\myfile.txt' do
- Content 'This is a test file'
+ content 'This is a test file'
  action :create
 end
 
