@@ -2,7 +2,7 @@
 directory 'C:\FGL' do
   action :create
   recursive true
-  rights :full_control, "Admin", :applies_to_children => true
+  rights :full_control, "Administrator", :applies_to_children => true
 end
 
 # creation d'un fichier text avec contenu
