@@ -21,4 +21,8 @@ jobs:
         run: |
           echo "Lets list our workspace content"
           ls ${{ github.workspace }}
+      - name: Edit the rb file
+        run: |
+          echo "Lets see the content of our file"
+          more /test/recipes/first.rb
       - run: echo "🍏 This job's status is ${{ job.status }} !!"
