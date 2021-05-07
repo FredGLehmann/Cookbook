@@ -2,3 +2,4 @@
 *fgl*
 .kitchen
 *.pem
+!.git/workflows/*
