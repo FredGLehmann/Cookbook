@@ -11,7 +11,4 @@ file 'c:\FGL\myfile.txt' do
  action :create
 end
 
-# Activation d'une feature
-#windowsfeature "TelnetClient" do
-#  action :install
-#end
+# ajout1
