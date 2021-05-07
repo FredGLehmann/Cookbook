@@ -12,3 +12,4 @@ file 'c:\FGL\myfile.txt' do
 end
 
 # ajout1
+# ajout2 pour PR
