@@ -6,6 +6,12 @@ jobs:
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
+      - name: Install ChefDK package
+        run: |
+          echo "Let's install the ChefDK package"
+          VER=21.5.420
+          wget https://packages.chef.io/files/stable/chef-workstation/${VER}/ubuntu/20.04/chef-workstation_${VER}-1_amd64.deb
+          sudo apt install ./chefdk_${VER}-1_amd64.deb
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
       - name: Check out repository code
         uses: actions/checkout@v2
@@ -18,6 +24,9 @@ jobs:
           FILES=$(curl -s -X GET -G $URL | jq -r '.[] | .filename')
           for file in $FILES
           do
-            more $file
+            if [$file == *.rb]
+            then
+              more $file
+            fi
           done
       - run: echo "🍏 This job's status is ${{ job.status }} !!"
