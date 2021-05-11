@@ -11,7 +11,7 @@ jobs:
           echo "Let's install the ChefDK package"
           VER=21.5.420
           wget https://packages.chef.io/files/stable/chef-workstation/${VER}/ubuntu/20.04/chef-workstation_${VER}-1_amd64.deb
-          sudo apt install ./chefdk_${VER}-1_amd64.deb
+          sudo dpkg -i ./chefdk_${VER}-1_amd64.deb
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
       - name: Check out repository code
         uses: actions/checkout@v2
