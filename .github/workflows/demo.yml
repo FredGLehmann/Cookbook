@@ -26,7 +26,7 @@ jobs:
           do
             if [$file == *.rb]
             then
-              more $file
+              cookstyle $file
             fi
           done
       - run: echo "🍏 This job's status is ${{ job.status }} !!"
