@@ -24,9 +24,9 @@ jobs:
           FILES=$(curl -s -X GET -G $URL | jq -r '.[] | .filename')
           for file in $FILES
           do
-            echo $file
             if [ $file == *.rb ]
             then
+              more $file
               cookstyle $file
             fi
           done
