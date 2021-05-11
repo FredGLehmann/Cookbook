@@ -16,13 +16,8 @@ jobs:
           echo "Let's list the PR files"
           URL="https://api.github.com/repos/${GITHUB_REPOSITORY}/pulls/${{ github.event.pull_request.number }}/files"
           FILES=$(curl -s -X GET -G $URL | jq -r '.[] | .filename')
-          echo $FILES
-      - name: List files in the workspace
-        run: |
-          echo "Lets list our workspace content"
-          ls ${{ github.workspace }}
-      - name: Edit the rb file
-        run: |
-          echo "Lets see the content of our file"
-          more test/recipes/first.rb
+          for file in $FILES
+          do
+            more $file
+          done
       - run: echo "🍏 This job's status is ${{ job.status }} !!"
