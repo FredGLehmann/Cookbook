@@ -1,7 +1,13 @@
-name: Actions Demo
-on: [pull_request]
+name: CookStyle Check on develop
+on:
+  push:
+    branches:
+        - develop
+  pull_request:
+    branches:
+        - develop
 jobs:
-  Explore-GitHub-Actions:
+  Cookstyle-Check:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Job automatically triggered by a ${{ github.event_name }} event."
